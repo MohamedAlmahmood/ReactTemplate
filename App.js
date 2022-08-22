@@ -1,5 +1,5 @@
 import './App.css';
-import Appbar from './Components/Appbar';
+import Appbar from './Components/Appbar/Appbar';
 import theme from './Styling/theme';
 import { Container } from "@mui/material";
 import { ThemeProvider } from '@mui/material/styles'
