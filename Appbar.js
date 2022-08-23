@@ -5,9 +5,11 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import { useState } from "react";
 import MyDrawer from "./drawer.tsx";
+import {Link} from 'react-router-dom'
 
 export default function Appbar() {
     const [value, setValue] = useState()
+    const pages = ["Home", "Skills", "Education", "Work", "Contact"]
     return (
         <AppBar color="background" position='fixed' elevation={0} >
             <Toolbar >
@@ -25,11 +27,9 @@ export default function Appbar() {
                             <ButtonGroup color='inherit' variant="filled" aria-label="outlined primary button group" size="large"
                                 sx={{ '& .MuiButtonGroup-grouped:not(:last-of-type)': { borderColor: "red" }, }} disableElevation>
                                 <Tabs textColor="primary" indicatorColor="primary" value={value} onChange={(e, value) => setValue(value)} sx={{ padding: 1 }}>
-                                    <Tab label='Home' />
-                                    <Tab label='Skills' />
-                                    <Tab label='Education' />
-                                    <Tab label='Work' />
-                                    <Tab label='Contact' />
+                                    {pages.map((page)=>(
+                                        <Tab label={page} href={`/${page}`} onClick={() => <Link to={`/${page}`}/>}/>
+                                    ))}
                                 </Tabs>
                                 <IconButton color='Instagram' size="small">
                                     <InstagramIcon fontSize="small" />
@@ -53,3 +53,11 @@ export default function Appbar() {
         </AppBar>
     )
 }
+
+/*                                <Tabs textColor="primary" indicatorColor="primary" value={value} onChange={(e, value) => setValue(value)} sx={{ padding: 1 }}>
+                                    <Tab label='Home' />
+                                    <Tab label='Skills' />
+                                    <Tab label='Education' />
+                                    <Tab label='Work' />
+                                    <Tab label='Contact' />
+                                </Tabs>*/
