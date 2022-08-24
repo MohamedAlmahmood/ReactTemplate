@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Drawer, IconButton, List, ListItemButton, ListItemText, Divider, Box } from '@mui/material';
+import { Drawer, IconButton, List, ListItemButton, ListItemText, Divider } from '@mui/material';
 import { useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -79,7 +79,3 @@ export default function MyDrawer() {
     )
 }
 
-
-{/* <Box alignItems="right" justifyContent="center" sx={{position: "fixed", bottom: 0, paddingBottom: 2, justifyContent:"center"}}>
-heelo
-</Box> */}

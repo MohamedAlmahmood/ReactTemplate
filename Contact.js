@@ -1,22 +1,16 @@
-import Appbar from './Components/Appbar/Appbar';
-import ImageBox from './Components/ImageBox/ImageBox';
-import theme from './Components/Styling/theme';
-import { Container } from "@mui/material";
-import { ThemeProvider } from '@mui/material/styles'
-import {useEffect} from 'react'//for page title that can be seen in the tab
+import {Typography, Grid} from "@mui/material";
 
-function Contact() {
-  useEffect(() => {
-    document.title = "My Website";
-  }, []);
+export default function Contact() {
   return (
-    <ThemeProvider theme={theme}>
-      <Appbar/>
-      <Container maxWidth={false}>
-        Contact
-      </Container>
-    </ThemeProvider>
+    <Grid container>
+        <Grid xs={12} mt={10}>
+            <Typography>Contact</Typography>
+            <Typography>Contact</Typography>
+            <Typography>Contact</Typography>
+            <Typography>Contact</Typography>
+            <Typography>Contact</Typography>
+            <Typography>Contact</Typography>
+        </Grid>
+    </Grid>
   );
 }
-
-export default App;

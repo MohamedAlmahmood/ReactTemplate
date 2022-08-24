@@ -11,13 +11,13 @@ export default function Appbar() {
     const [value, setValue] = useState()
     const pages = ["Home", "Skills", "Education", "Work", "Contact"]
     return (
-        <AppBar color="background" position='fixed' elevation={0} >
+        <AppBar color="background" position='fixed' elevation={0}>
             <Toolbar >
                 <Grid container alignItems="center">
 
 
                     <Grid display="flex" xs={10} alignItems="center">
-                        <img src={MapleLeafLogo} alt="Kitty Katty!" style={{maxWidth: 29, marginRight: 10}}/>
+                        <img src={MapleLeafLogo} alt="mylogo!" style={{maxWidth: 29, marginRight: 10}}/>
                         <Typography fontSize={18} fontWeight={600} letterSpacing={3} noWrap >MY WEBSITE</Typography>
                     </Grid>
 
@@ -28,7 +28,7 @@ export default function Appbar() {
                                 sx={{ '& .MuiButtonGroup-grouped:not(:last-of-type)': { borderColor: "red" }, }} disableElevation>
                                 <Tabs textColor="primary" indicatorColor="primary" value={value} onChange={(e, value) => setValue(value)} sx={{ padding: 1 }}>
                                     {pages.map((page)=>(
-                                        <Tab label={page} href={`/${page}`} onClick={() => <Link to={`/${page}`}/>}/>
+                                        <Tab label={page} component={Link} to={`/${page}`}/>
                                     ))}
                                 </Tabs>
                                 <IconButton color='Instagram' size="small">
