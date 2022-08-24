@@ -1,16 +1,18 @@
-import {Typography, Grid} from "@mui/material";
+import Appbar from './Appbar/Appbar';
+import { Container, Typography } from "@mui/material";
 
-export default function Work() {
+export default function Work({Path}) {
   return (
-    <Grid container>
-        <Grid xs={12} mt={10}>
-            <Typography>Work</Typography>
-            <Typography>Work</Typography>
-            <Typography>Work</Typography>
-            <Typography>Work</Typography>
-            <Typography>Work</Typography>
-            <Typography>Work</Typography>
-        </Grid>
-    </Grid>
+    <>
+    <Appbar Path={Path}/>
+    <Container maxWidth={false} sx={{mt: 10}}>
+        <Typography>Work</Typography>
+        <Typography>Work</Typography>
+        <Typography>Work</Typography>
+        <Typography>Work</Typography>
+        <Typography>Work</Typography>
+        <Typography>Work</Typography>
+    </Container>
+    </>
   );
 }

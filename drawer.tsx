@@ -5,10 +5,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
+import {Link} from 'react-router-dom'
 
-export default function MyDrawer() {
+export default function MyDrawer({Path}) {
     const [openDrawer, setOpenDrawer] = useState(false)
-    const [selectedIndex, setSelectedIndex] = React.useState(1);
+    const [selectedIndex, setSelectedIndex] = React.useState(Path);
 
     const handleListItemClick = (
         event: React.MouseEvent<HTMLDivElement, MouseEvent>,
@@ -25,6 +26,7 @@ export default function MyDrawer() {
                     <ListItemButton
                         selected={selectedIndex === 1}
                         onClick={(event) => handleListItemClick(event, 1)}
+                        component={Link} to="/Home"
                     >
                         <ListItemText primary="Home" />
                     </ListItemButton>
@@ -32,6 +34,7 @@ export default function MyDrawer() {
                     <ListItemButton
                         selected={selectedIndex === 2}
                         onClick={(event) => handleListItemClick(event, 2)}
+                        component={Link} to="/Skills"
                     >
                         <ListItemText primary="Skills" />
                     </ListItemButton>
@@ -39,6 +42,7 @@ export default function MyDrawer() {
                     <ListItemButton
                         selected={selectedIndex === 3}
                         onClick={(event) => handleListItemClick(event, 3)}
+                        component={Link} to="/Education"
                     >
                         <ListItemText primary="Education" />
                     </ListItemButton>
@@ -46,6 +50,7 @@ export default function MyDrawer() {
                     <ListItemButton
                         selected={selectedIndex === 4}
                         onClick={(event) => handleListItemClick(event, 4)}
+                        component={Link} to="/Work"
                     >
                         <ListItemText primary="Work" />
                     </ListItemButton>
@@ -53,6 +58,7 @@ export default function MyDrawer() {
                     <ListItemButton
                         selected={selectedIndex === 5}
                         onClick={(event) => handleListItemClick(event, 5)}
+                        component={Link} to="/Contact"
                     >
                         <ListItemText primary="Contact" />
                     </ListItemButton>

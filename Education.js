@@ -1,16 +1,18 @@
-import {Typography, Grid} from "@mui/material";
+import Appbar from './Appbar/Appbar';
+import { Container, Typography } from "@mui/material";
 
-export default function Education() {
+export default function Education({Path}) {
   return (
-    <Grid container>
-    <Grid xs={12} mt={10}>
+    <>
+    <Appbar Path={Path}/>
+    <Container maxWidth={false} sx={{mt: 10}}>
         <Typography>Education</Typography>
         <Typography>Education</Typography>
         <Typography>Education</Typography>
         <Typography>Education</Typography>
         <Typography>Education</Typography>
         <Typography>Education</Typography>
-    </Grid>
-</Grid>
+    </Container>
+    </>
   );
 }

@@ -52,7 +52,7 @@ export const Colors = {
         },
       },
       typography: {
-        fontFamily: "Times New Roman"
+        fontFamily: "Helvetica"
       },
       components: {
         MuiButton: {

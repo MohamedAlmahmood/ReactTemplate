@@ -7,9 +7,18 @@ import { useState } from "react";
 import MyDrawer from "./drawer.tsx";
 import {Link} from 'react-router-dom'
 
-export default function Appbar() {
-    const [value, setValue] = useState()
+
+export default function Appbar({Path}) {
+    const pathToIndex = {
+        Home: 0,
+        Skills: 1,
+        Education: 2,
+        Work: 3,
+        Contact: 4
+    }
+    const [selectedTab, setSelectedTab] = useState(pathToIndex[Path])
     const pages = ["Home", "Skills", "Education", "Work", "Contact"]
+    
     return (
         <AppBar color="background" position='fixed' elevation={0}>
             <Toolbar >
@@ -18,7 +27,7 @@ export default function Appbar() {
 
                     <Grid display="flex" xs={10} alignItems="center">
                         <img src={MapleLeafLogo} alt="mylogo!" style={{maxWidth: 29, marginRight: 10}}/>
-                        <Typography fontSize={18} fontWeight={600} letterSpacing={3} noWrap >MY WEBSITE</Typography>
+                        <Typography fontSize={17} fontWeight={600} letterSpacing={0} fontFamily='cursive' noWrap >MY WEBSITE</Typography>
                     </Grid>
 
 
@@ -26,7 +35,7 @@ export default function Appbar() {
                         <Box sx={{ display: { xs: "none", md: "flex" } }}>
                             <ButtonGroup color='inherit' variant="filled" aria-label="outlined primary button group" size="large"
                                 sx={{ '& .MuiButtonGroup-grouped:not(:last-of-type)': { borderColor: "red" }, }} disableElevation>
-                                <Tabs textColor="primary" indicatorColor="primary" value={value} onChange={(e, value) => setValue(value)} sx={{ padding: 1 }}>
+                                <Tabs textColor="primary" indicatorColor="primary" value={selectedTab} onChange={(e, selectedTab) => setSelectedTab(selectedTab)} sx={{ padding: 1 }}>
                                     {pages.map((page)=>(
                                         <Tab label={page} component={Link} to={`/${page}`}/>
                                     ))}
@@ -43,7 +52,7 @@ export default function Appbar() {
                             </ButtonGroup>
                         </Box>
                         <Box alignItems="center" justifyContent="center" sx={{ display: { xs: "flex", md: "none" }, ml: 2, mr: -1.5 }}>
-                            <MyDrawer />
+                            <MyDrawer Path={pathToIndex[Path]+1}/>
                         </Box>
                     </Grid>
 
